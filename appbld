@@ -19,5 +19,5 @@ else
   echo "Start building ..."
   docker run -v `pwd`:`pwd` -w `pwd` -i -t \
   --rm --network host \
-  5game-bld bash
+  5game-bld bash -c "cd anbox && mkdir -p build && cd build && cmake .. && make -j3"
 fi
