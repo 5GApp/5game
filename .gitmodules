@@ -1,0 +1,4 @@
+[submodule "anbox"]
+	path = anbox
+	url = https://github.com/anbox/anbox.git
+	branch = master

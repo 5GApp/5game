@@ -1,0 +1,31 @@
+#
+# 5game building Dockerfile
+#
+# https://github.com/5GApp/5game 
+# Copyright (c) 2020 Tom Zhou<appnet.link@gmail.com>
+
+# Pull base image.
+FROM ubuntu:18.04
+
+# Install.
+RUN \
+ apt-get -y update && \
+ apt install -y \
+ build-essential cmake cmake-data debhelper dbus google-mock \
+ libboost-dev libboost-filesystem-dev libboost-log-dev libboost-iostreams-dev \
+ libboost-program-options-dev libboost-system-dev libboost-test-dev \
+ libboost-thread-dev libcap-dev libsystemd-dev libegl1-mesa-dev \
+ libgles2-mesa-dev libglm-dev libgtest-dev liblxc1 \
+ libproperties-cpp-dev libprotobuf-dev libsdl2-dev libsdl2-image-dev lxc-dev \
+ pkg-config protobuf-compiler python-minimal
+
+# Add files.
+
+# Set environment variables.
+ENV HOME /root
+
+# Define working directory.
+WORKDIR /appins
+
+# Define default command.
+CMD ["bash"]
